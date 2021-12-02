@@ -1,9 +1,9 @@
-var title = "...";
-let screens = "...";
-let screenPrice = "...";
-var rollBack = "...";
-const fullPrice = "1";
-let adaptive = "...";
+const title = "Строка с названием проекта";
+let screens = "Простые, сложные, интерактивные";
+let screenPrice = 11;
+let rollBack = 99;
+let fullPrice = 250;
+let adaptive = true;
 
 console.log("I want to learn JS!");
 
