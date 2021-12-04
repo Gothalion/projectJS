@@ -1,9 +1,26 @@
-const title = "Строка с названием проекта";
-let screens = "Простые, сложные, интерактивные";
-let screenPrice = 11;
+"use strict";
+
+const title = prompt("Как называется ваш проект?");
+
+let screens = prompt(
+  "Какие типы экранов нужно разработать?",
+  'пример: "Простые, Сложные, Интерактивные"'
+);
+
+let screenPrice = prompt("Сколько будет стоить данная работа?", "пример: 1200");
+
+let adaptive = confirm("Нужен ли адаптив на сайте?");
+
+let serviceOne = prompt("Какой дополнительный тип услуги нужен?");
+let servicePriceOne = prompt("Сколько это будет стоить?");
+let serviceTwo = prompt("Какой дополнительный тип услуги нужен?");
+let servicePriceTwo = prompt("Сколько это будет стоить?");
+
 let rollBack = 99;
-let fullPrice = 250;
-let adaptive = true;
+
+let fullPrice = screenPrice + serviceOne + servicePriceOne;
+let servicePercentPrice = fullPrice - rollBack;
+console.log(Math.ceil(servicePercentPrice));
 
 console.log(typeof title);
 console.log(typeof fullPrice);
