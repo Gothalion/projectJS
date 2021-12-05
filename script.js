@@ -34,9 +34,8 @@ console.log(typeof fullPrice);
 console.log(typeof adaptive);
 
 console.log(screens.length);
-
-console.log(screenPriceMessage + screenPrice + priceCurrency);
-console.log(fullPriceMessage + fullPrice + priceCurrency);
+console.log("Стоимость верстки экранов" + " " + screenPrice + " " + "долларов");
+console.log("Стоимость разработки сайта" + " " + fullPrice + " " + "долларов");
 
 console.log(screens.toUpperCase());
 console.log(screens.split(", "));
