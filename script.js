@@ -7,20 +7,39 @@ let screens = prompt(
   'пример: "Простые, Сложные, Интерактивные"'
 );
 
-let screenPrice = prompt("Сколько будет стоить данная работа?", "пример: 1200");
+let screenPrice = +prompt(
+  "Сколько будет стоить данная работа?",
+  "пример: 1200"
+);
 
 let adaptive = confirm("Нужен ли адаптив на сайте?");
 
 let serviceOne = prompt("Какой дополнительный тип услуги нужен?");
-let servicePriceOne = prompt("Сколько это будет стоить?");
+let servicePriceOne = +prompt("Сколько это будет стоить?");
 let serviceTwo = prompt("Какой дополнительный тип услуги нужен?");
-let servicePriceTwo = prompt("Сколько это будет стоить?");
+let servicePriceTwo = +prompt("Сколько это будет стоить?");
 
 let rollBack = 99;
 
-let fullPrice = screenPrice + serviceOne + servicePriceOne;
+let fullPrice = screenPrice + servicePriceOne + servicePriceTwo;
 let servicePercentPrice = fullPrice - rollBack;
 console.log(Math.ceil(servicePercentPrice));
+
+let bigSale = 30000;
+let sale = 15000;
+let noSale = 0;
+
+if (fullPrice > bigSale) {
+  console.log("Даем скидку в 10%");
+} else if (fullPrice < bigSale) {
+  console.log("Даем скидку в 5%");
+} else if (fullPrice > sale) {
+  console.log("Даем скидку в 5%");
+} else if (fullPrice < sale) {
+  console.log("Скидка не предусмотрена");
+} else {
+  console.log("Что-то пошло не так");
+}
 
 console.log(typeof title);
 console.log(typeof fullPrice);
