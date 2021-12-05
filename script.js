@@ -27,13 +27,13 @@ if (fullPrice >= 30000) {
   console.log("Что-то пошло не так");
 }
 
-console.log(Math.ceil(servicePercentPrice));
-
 console.log(typeof title);
 console.log(typeof fullPrice);
 console.log(typeof adaptive);
 
+console.log(Math.ceil(servicePercentPrice));
 console.log(screens.length);
+
 console.log("Стоимость верстки экранов" + " " + screenPrice + " " + "долларов");
 console.log("Стоимость разработки сайта" + " " + fullPrice + " " + "долларов");
 
