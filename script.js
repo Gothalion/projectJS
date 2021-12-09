@@ -1,20 +1,48 @@
 "use strict";
 
-let title = prompt("Как называется ваш проект?");
-let screens = prompt("Какие типы экранов нужно разработать?");
-let screenPrice = +prompt("Сколько будет стоить данная работа?");
-let adaptive = confirm("Нужен ли адаптив на сайте?");
-let serviceOne = prompt("Какой дополнительный тип услуги нужен?");
-let servicePriceOne = +prompt("Сколько это будет стоить?");
-let serviceTwo = prompt("Какой дополнительный тип услуги нужен?");
-let servicePriceTwo = +prompt("Сколько это будет стоить?");
+let title;
+let screens;
+let screenPrice;
+let adaptive;
 let rollBack = 10;
 let fullPrice;
 let servicePercentPrice;
 let allServicePrices;
+let serviceOne;
+let serviceTwo;
+
+const isNumber = function (num) {
+  return !isNaN(parseFloat(num));
+};
+
+const asking = function () {
+  title = prompt("Как называется ваш проект?", "Калькулятор верстки");
+  screens = prompt("Какие типы экранов нужно разработать?", "Простые, сложные");
+
+  screenPrice = prompt("Сколько будет стоить данная работа?");
+
+  while (isNumber(screenPrice)) {
+    screenPrice = prompt("Сколько будет стоить данная работа?");
+  }
+
+  adaptive = confirm("Нужен ли адаптив на сайте?");
+};
 
 const getAllServicePrices = function () {
-  return servicePriceOne + servicePriceTwo;
+  let sum = 0;
+
+  for (let i = 0; i < 2; i++) {
+    if (i === 0) {
+      serviceOne = prompt("Какой дополнительный тип услуги нужен?");
+    } else if (i === 1) {
+      serviceTwo = prompt("Какой дополнительный тип услуги нужен?");
+    }
+
+    sum += +prompt("Сколько это будет стоить?");
+  }
+
+  return sum;
+  // return servicePriceOne + servicePriceTwo;
 };
 
 function getFullPrice() {
@@ -45,6 +73,7 @@ const getRollbackMessage = function (price) {
   }
 };
 
+asking();
 allServicePrices = getAllServicePrices();
 fullPrice = getFullPrice();
 servicePercentPrice = getServicePercentPrices();
@@ -53,6 +82,8 @@ title = getTitle();
 showTypeOf(title);
 showTypeOf(screenPrice);
 showTypeOf(adaptive);
+
+console.log("allServicePrices", allServicePrices);
 
 console.log(getRollbackMessage(fullPrice));
 console.log(typeof title);
